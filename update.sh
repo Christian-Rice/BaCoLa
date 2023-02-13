@@ -30,7 +30,7 @@ if ! test -f "index.bacola" ; then
 fi &&
 
 if ! test -f "programFile" ; then
-  echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/programFile")" > "programFile";
+  touch "programFile";
 fi &&
 
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
