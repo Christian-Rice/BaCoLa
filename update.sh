@@ -21,8 +21,12 @@ echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/mast
 
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/bacola")" > "bacola" &&
 
-if ! test -f "File2.txt" ; then
+if ! test -f "variables.json" ; then
   echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variables.json")" > "variables.json";
+fi &&
+
+if ! test -f "index.bacola" ; then
+  echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "index.bacola";
 fi &&
 
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
