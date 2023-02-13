@@ -1,0 +1,14 @@
+import "%MFOLDER%/fs".
+
+setvar "f" =  open "therapy".
+
+write (getvar "f") = "".
+
+append (getvar "f") = (randombool ? "1" : "0").
+append (getvar "f") = (randombool ? "1" : "0").
+append (getvar "f") = (randombool ? "1" : "0").
+append (getvar "f") = (randombool ? "1" : "0").
+append (getvar "f") = (randombool ? "1" : "0").
+append (getvar "f") = (randombool ? "1" : "0").
+append (getvar "f") = (randombool ? "1" : "0").
+append (getvar "f") = (randombool ? "1" : "0").

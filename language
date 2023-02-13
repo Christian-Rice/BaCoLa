@@ -1,0 +1,289 @@
+native function comments
+  (ARGS) => {
+    return;
+  }
+constructor comments ({//$1},{[["1","comment"]]},{[]})
+
+
+native function string
+  (ARGS) => {
+    return String(ARGS.txt);
+  }
+constructor string ({"$1"},{[["1","txt"]]},{[]})
+
+
+constructor string ({'$1'},{[["1","txt"]]},{[]})
+native function print
+  (ARGS) => {
+    console.log(ARGS.txt);
+  }
+constructor print ({print = $1.},{[["1","txt"]]},{["txt"]})
+
+native function true
+  () => {
+    return true
+  }
+
+constructor true ({true},{[]},{[]})
+
+native function false
+  () => {
+    return false
+  }
+
+constructor false ({false},{[]},{[]})
+
+native function exit
+  (ARGS) => {
+    process.exit()
+  }
+
+constructor exit ({exit.},{[]},{[]})
+
+native function joinStr
+  (ARGS) => {
+    return (String(ARGS.x) + String(ARGS.y))
+  }
+
+constructor joinStr ({> $1 & $2},{[["1","x"], ["2", "y"]]},{["x", "y"]})
+
+native function printf
+  (ARGS) => {
+    process.stdout.write(ARGS.txt);
+  }
+
+constructor printf ({printf = $1.},{[["1","txt"]]},{["txt"]})
+
+//native function eatme.md
+//  (ARGS) => {
+//    return "pls eatme.md"
+//  }
+
+//constructor eatme.md ({eatmeDOTmd},{[]},{[]})
+
+native function clear
+  (ARGS) => {
+    console.clear()
+  }
+
+constructor clear ({clear.},{[]},{[]})
+native function random
+  (ARGS) => {
+    return Math.random() * (ARGS.max - ARGS.min + 1) + ARGS.min;
+  }
+constructor random ({random $1 $2},{[["1","min"], ["2", "max"]]},{["min","max"]})
+native function randomfloor
+  (ARGS) => {
+    return Math.floor(Math.random() * (ARGS.max - ARGS.min + 1)) + ARGS.min;
+  }
+constructor randomfloor ({randomfloor $1 $2},{[["1","min"], ["2", "max"]]},{["min","max"]})
+
+native function randombool
+  (ARGS) => {
+    return Boolean(Math.floor(Math.random() * (1 - 0 + 1)) + 0 ? 1 : 0);
+  }
+
+constructor randombool ({randombool},{[]},{[]})
+
+native function number
+  (ARGS) => {
+    return Number(ARGS.num)
+  }
+
+constructor number ({#$1#},{[["1","num"]]},{[]})
+
+//default (start exec)
+native function add
+  (ARGS) => {
+    return Number(ARGS.x) + Number(ARGS.y);
+  }
+native function subtract
+  (ARGS) => {
+    return Number(ARGS.x) - Number(ARGS.y)
+  }
+native function mutiply
+  (ARGS) => {
+    return Number(ARGS.x) * Number(ARGS.y)
+  }
+native function divide
+  (ARGS) => {
+    return Number(ARGS.x) / Number(ARGS.y)
+  }
+
+constructor add ({# $1 + $2 #},{[["1","x"],["2","y"]]},{["x", "y"]})
+constructor subtract ({# $1 - $2 #},{[["1","x"],["2","y"]]},{["x", "y"]})
+constructor mutiply ({# $1 * $2 #},{[["1","x"],["2","y"]]},{["x", "y"]})
+constructor divide ({# $1 / $2 #},{[["1","x"],["2","y"]]},{["x", "y"]})
+
+native function floor
+  (ARGS) => {
+    return Math.floor(ARGS.num);
+  }
+constructor floor ({#_ $1 _#},{[["1","num"]]},{["num"]})
+native function letter
+  (ARGS) => {
+    return;
+  }
+constructor letter ({a.},{[]},{[]})
+constructor letter ({b.},{[]},{[]})
+constructor letter ({c.},{[]},{[]})
+constructor letter ({d.},{[]},{[]})
+constructor letter ({e.},{[]},{[]})
+constructor letter ({f.},{[]},{[]})
+constructor letter ({g.},{[]},{[]})
+constructor letter ({h.},{[]},{[]})
+constructor letter ({i.},{[]},{[]})
+constructor letter ({j.},{[]},{[]})
+constructor letter ({k.},{[]},{[]})
+constructor letter ({l.},{[]},{[]})
+constructor letter ({m.},{[]},{[]})
+constructor letter ({n.},{[]},{[]})
+constructor letter ({o.},{[]},{[]})
+constructor letter ({p.},{[]},{[]})
+constructor letter ({q.},{[]},{[]})
+constructor letter ({r.},{[]},{[]})
+constructor letter ({s.},{[]},{[]})
+constructor letter ({t.},{[]},{[]})
+constructor letter ({u.},{[]},{[]})
+constructor letter ({v.},{[]},{[]})
+constructor letter ({w.},{[]},{[]})
+constructor letter ({x.},{[]},{[]})
+constructor letter ({y.},{[]},{[]})
+constructor letter ({z.},{[]},{[]})
+constructor letter ({A.},{[]},{[]})
+constructor letter ({B.},{[]},{[]})
+constructor letter ({C.},{[]},{[]})
+constructor letter ({D.},{[]},{[]})
+constructor letter ({E.},{[]},{[]})
+constructor letter ({F.},{[]},{[]})
+constructor letter ({G.},{[]},{[]})
+constructor letter ({H.},{[]},{[]})
+constructor letter ({I.},{[]},{[]})
+constructor letter ({J.},{[]},{[]})
+constructor letter ({K.},{[]},{[]})
+constructor letter ({L.},{[]},{[]})
+constructor letter ({M.},{[]},{[]})
+constructor letter ({N.},{[]},{[]})
+constructor letter ({O.},{[]},{[]})
+constructor letter ({P.},{[]},{[]})
+constructor letter ({Q.},{[]},{[]})
+constructor letter ({R.},{[]},{[]})
+constructor letter ({S.},{[]},{[]})
+constructor letter ({T.},{[]},{[]})
+constructor letter ({U.},{[]},{[]})
+constructor letter ({V.},{[]},{[]})
+constructor letter ({W.},{[]},{[]})
+constructor letter ({X.},{[]},{[]})
+constructor letter ({Y.},{[]},{[]})
+constructor letter ({Z.},{[]},{[]})
+constructor true ({1},{[]},{[]})
+constructor letter ({2.},{[]},{[]})
+constructor letter ({3.},{[]},{[]})
+constructor letter ({4.},{[]},{[]})
+constructor letter ({5.},{[]},{[]})
+constructor letter ({6.},{[]},{[]})
+constructor letter ({7.},{[]},{[]})
+constructor letter ({8.},{[]},{[]})
+constructor letter ({9.},{[]},{[]})
+constructor false ({0},{[]},{[]})
+
+native function multilineComments
+  (ARGS) => {
+    return;
+  }
+
+constructor multilineComments ({//{$1}//},{[["1", "comments"]]},{[]})
+
+native function resetvars
+  (ARGS) => {
+    var fs = require("fs");
+    fs.writeFileSync(__dirname + "/variables.json", JSON.stringify(require(__dirname + "/variablesdefault.json"), null, "\t"))
+  }
+
+constructor resetvars ({resetvars.},{[]},{[]})
+
+native function loop
+  (ARGS) => {
+    for (var i = 0; i < ARGS.times; i++){
+      let program = ARGS.code;
+      let _l = compileLines(program,syntaxoptions);
+      _l = compileLines(program,syntax);
+      for(let [i, line] of _l.entries()) {
+        readFunction(line, false, i);
+      }
+    }
+  }
+
+constructor loop ({loop $1 {$2}},{[["1", "times"],["2", "code"]]},{["times"]})
+
+native function codeBlock
+  (ARGS) => {
+    let program = ARGS.code;
+    let _l = compileLines(program,syntaxoptions);
+    _l = compileLines(program,syntax);
+    for(let [i, line] of _l.entries()) {
+      readFunction(line, false, i);
+    }
+  }
+
+constructor codeBlock ({{$1}},{[["1", "code"]]},{[]})
+
+native function codeBlock2
+  (ARGS) => {
+    return ARGS.code;
+  }
+
+constructor codeBlock2 ({($1)},{[["1", "code"]]},{["code"]})
+
+native function toNum
+  (ARGS) => {
+    return Number(ARGS.str);
+  }
+
+constructor toNum ({number $1},{[["1", "str"]]},{["str"]})
+
+native function toStr
+  (ARGS) => {
+    return String(ARGS.num);
+  }
+
+constructor toStr ({string $1},{[["1", "num"]]},{["num"]})
+
+native function wait
+  async (ARGS) => {
+    return await new Promise(resolve => setTimeout(resolve, ARGS.num));
+  }
+constructor wait ({wait $1.},{[["1","num"]]},{["num"]})
+
+native function toggleignore
+  (ARGS) => {
+    ignore = !ignore;
+    return ignore;
+  }
+
+constructor toggleignore ({!TOGGLEIGNORE},{[]},{[]})
+
+native function undefined
+  () => {
+    return undefined
+  }
+
+constructor undefined ({undefined},{[]},{[]})
+
+native function null
+  () => {
+    return null
+  }
+
+constructor null ({null},{[]},{[]})
+
+EvalJS
+  if(variables.clearConsoleAtStart.value){
+    readFunction('clear.');
+  }
+//setvarunlocked "keepLanguageDefiningCommands" = true.
+//setvarunlocked "version" = "1.0"
+//EvalJS = "console.log('\x1b[47m\x1b[30m')"
+//printf = > "BaCoLa" & > " " & getvar "version" < <.
+//EvalJS = "console.log('\x1b[0m')"
+//EvalJS = "console.log('\x1b[47m\x1b[30m%s\x1b[0m', `BaCoLa ${variables.version.value}`)"

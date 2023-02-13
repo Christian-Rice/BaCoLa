@@ -1,0 +1,19 @@
+import "%MFOLDER%/fs"
+
+setvar "id" = #1#
+setvar "count" = #10#
+setvar "bits" = #8#
+setvar "dirname" = "files2"
+
+!TOGGLEIGNORE
+
+mkdir (getvar "dirname")
+loop (getvar "count") {
+  setvar "f" = open (> (> (getvar "dirname") & "/") & (> (getvar "id") & (".txt"))).
+  write (getvar "f") = ""
+  loop (getvar "bits")
+    write (getvar "f") = (> (read (getvar "f")) & (randombool ? "1" : "0"))
+  setvar "id" = (# (getvar "id") + #1# #).
+}
+
+//print = randombool ? #1# : #0#.

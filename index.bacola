@@ -1,0 +1,3 @@
+print = "Example Script executing!"
+import "%MFOLDER%/exampleModule"
+example = "Executed!"

@@ -1,0 +1,30 @@
+{
+	"variable": {
+		"value": "Example varable",
+		"locked": true
+	},
+	"version": {
+		"value": "1.0 (BETA)",
+		"locked": true
+	},
+	"stopOnError": {
+		"value": true,
+		"locked": true
+	},
+	"stopOnWarn": {
+		"value": false,
+		"locked": true
+	},
+	"keepLanguageDefiningCommands": {
+		"value": false,
+		"locked": true
+	},
+	"showVarCreation": {
+		"value": false,
+		"locked": true
+	},
+	"clearConsoleAtStart": {
+		"value": false,
+		"locked": true
+	}
+}

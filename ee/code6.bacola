@@ -1,0 +1,15 @@
+import "%MFOLDER%/arrays"
+
+setvar "arr" = |"abc123", randombool|.
+
+print = getvar "arr"
+
+//print = getIndex ('<@type="array" @0="\"abc123\"" @1="randombool" @2="#3#">')[#1#]
+
+setvar "arr" = setIndex (getvar "arr")[#1#] = "ijedhiudfshiuefs'huhuida'".
+//print = getIndex (getvar "arr")[#1#]
+
+setvar "arr" = push (getvar "arr") = "Hello, World!"
+print = getvar "arr"
+wait #4000#
+print = (getIndex (getvar "arr")["1"]

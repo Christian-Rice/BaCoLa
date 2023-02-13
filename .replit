@@ -1,0 +1,4 @@
+run = "./bacola file #arraytest #code #remake #code4 #code3 #code2 #code #program #index"
+
+[nix]
+channel = "stable-21_11"

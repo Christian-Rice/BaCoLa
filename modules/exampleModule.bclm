@@ -1,0 +1,14 @@
+native function example
+  (ARGS) => {
+    //NodeJS code
+    console.log(ARGS.txt)
+  }
+
+constructor example ({example = $1.},{[["1", "txt"]]},{["txt"]})
+
+//To import this module run:
+//
+//import "%MFOLDER%/exampleModule"
+//
+//Remember to not add ".bclm" in the import statment. 
+//%MFOLDER% is ' __dirname + "/modules" ' in NodeJS

@@ -1,0 +1,13 @@
+EvalJS {
+  fns["native"] = (ARGS) => {
+    fns[ARGS.name] = Function("return "+ARGS.code.trim('\n').trim())();
+  }
+  fns["EvalJS"] = (ARGS) => {
+    readFunction("warn = \"This function is disabled.\"")
+    return null
+  }
+  fns["EvalJS2"] = (ARGS) => {
+    readFunction("warn = \"This function is disabled.\"")
+    return null
+  }
+}

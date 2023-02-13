@@ -1,0 +1,22 @@
+import "%MFOLDER%/arrays"
+setvar "arr" = |"aaa", "bbb", "ccc", "ddd"|.
+
+print = getvar "arr".
+
+setvar "arr" = insertFirst (getvar "arr") = "eee".
+
+print = getvar "arr".
+
+print = getIndex (getvar "arr")[#3#].
+
+setvar "arr" = remove (getvar "arr")[#2#].
+
+print = getvar "arr".
+
+print = getIndex (getvar "arr")[#2#].
+
+setvar "arr" = setIndex (getvar "arr")[#2#] = null.
+
+print = getvar "arr".
+
+print = getIndex (getvar "arr")[#2#].
