@@ -1,6 +1,7 @@
 rm -rf "index.js" &&
 rm -rf "language" &&
 rm -rf "modules" &&
+rm -rf "variablesdefault.json" &&
 
 clear &&
 
