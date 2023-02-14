@@ -15,7 +15,7 @@ done &&
 if ! test -d "../temp/modules" ; then
   mkdir "../temp/modules";
 fi &&
-
+ls
 mv "modules/*" "../temp/modules" &&
 cd "../" &&
 
