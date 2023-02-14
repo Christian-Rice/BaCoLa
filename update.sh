@@ -1,4 +1,8 @@
-cd "bacola" > "/dev/null" &&
+if test -f "bacola/" ; then
+  cd "bacola/";
+else
+  mkdir "bacola"
+fi &&
 
 filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
 
@@ -13,7 +17,7 @@ mkdir "../temp/modules" &&
 mv "modules/*" "../temp/modules" &&
 cd "../" &&
 
-rm -rd "../bacola" > "/dev/null" &&
+rm -rd "../bacola"
 
 mkdir "bacola" &&
 cd "bacola" &&
