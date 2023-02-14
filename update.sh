@@ -29,6 +29,10 @@ cd "../" &&
 if ! test -f "index.bacola" ; then
   echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "index.bacola";
 fi &&
+
+if ! test -f "programFile" ; then
+  touch "programFIle";
+fi &&
 cd "bacola" &&
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
 
@@ -36,4 +40,4 @@ chmod +x * &&
 
 cd "../" &&
 
-./bacola/bacola "$(cat programFile)";
+./bacola/bacola "$(cat "programFile")";
