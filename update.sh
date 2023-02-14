@@ -1,5 +1,5 @@
 if ! test -d "bacola" ; then
-  mkdir "bacola"
+  mkdir "bacola" || true
 fi &&
 
 filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
@@ -7,24 +7,24 @@ filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.b
 if ! test -d "../temp" ; then
   mkdir "../temp";
 fi &&
-cd "bacola"
+cd "bacola" &&
 for i in "${filesToRemove[@]}"; do
   if test -f "$i" ; then
-    rm -rf "$i";
+    rm -rf "$i" || true;
   fi
 done &&
 cd "../" &&
 cd "bacola"
 if test -d "modules" ; then
-  mv "modules" "../temp";
+  mv "modules" || true;
 fi &&
 
 cd "../" &&
 
-rm -rd "../bacola" &&
+rm -rd "../bacola" || true &&
 
 if ! test -d "bacola" ; then
-  mkdir "bacola"
+  mkdir "bacola" || true
 fi &&
 
 cd "bacola" &&
