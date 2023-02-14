@@ -48,7 +48,7 @@ fi &&
 
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
 
-chmod +x * &&
+chmod +x bacola &&
 
 cd "../" &&
 
