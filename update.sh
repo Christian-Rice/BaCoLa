@@ -39,6 +39,7 @@ if ! test -f "variables.json" ; then
   echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variables.json")" > "variables.json";
 fi &&
 cd "../" &&
+ls &&
 if ! test -f "index.bacola" ; then
   echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "index.bacola";
 fi &&
