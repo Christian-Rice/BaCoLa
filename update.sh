@@ -18,7 +18,10 @@ if ! test -d "../temp/modules" ; then
   mkdir "../temp/modules";
 fi &&
 cd "bacola"
-mv "modules/*" "../temp/modules" &&
+if test -d "modules" ; then
+  mv "modules/*" "../temp/modules";
+fi &&
+
 cd "../" &&
 
 rm -rd "../bacola" &&
