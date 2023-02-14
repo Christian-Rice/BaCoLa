@@ -1,5 +1,5 @@
 
-filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
+filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "language" "index.js" "variablesdefault.json" )
 
 for i in "${filesToRemove[@]}"; do
   if test -f "$i" ; then
