@@ -52,13 +52,11 @@ if ! test -f "programFile" ; then
 fi &&
 cd "bacola" &&
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
-
+cd "../" &&
 cp "temp/modules/*" "bacola/modules" &&
 
 rm -rf "temp" &&
 
 chmod +x * &&
-
-cd "../" &&
 
 ./bacola/bacola "$(cat "programFile")";
