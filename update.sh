@@ -1,8 +1,9 @@
 if ! test -d "bacola" ; then
-  mkdir "bacola" || true
+  mkdir "bacola";
 fi &&
 
 filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
+
 cd "bacola" &&
 
 for i in "${filesToRemove[@]}"; do
@@ -10,8 +11,6 @@ for i in "${filesToRemove[@]}"; do
     rm -rf "$i" || true;
   fi
 done &&
-
-cd "bacola" &&
 
 clear &&
 
