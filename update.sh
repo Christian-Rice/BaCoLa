@@ -10,7 +10,7 @@ filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.b
 
 for i in "${filesToRemove[@]}"; do
   if test -f "$i" ; then
-    rm -rf "./$i" || true;
+    rm -rf "$i" || true;
   fi
 done &&
 
@@ -33,17 +33,18 @@ echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/mast
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/modules/safeMode.bclm")" > "modules/safeMode.bclm" &&
 
 #echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/bacola")" > "bacola" &&
-echo "node bacola/index.js $1" > "bacola" &&
+echo "node ./index.js $1" > "bacola" &&
 
 if ! test -f "variables.json" ; then
   echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variables.json")" > "variables.json";
 fi &&
-if ! test -f "../index.bacola" ; then
-  echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "../index.bacola";
+cd "../" &&
+if ! test -f "index.bacola" ; then
+  echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "index.bacola";
 fi &&
 
-if ! test -f "../programFile" ; then
-  touch "../programFile";
+if ! test -f "programFile" ; then
+  touch "programFile";
 fi &&
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
 
