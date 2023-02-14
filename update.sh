@@ -24,11 +24,11 @@ echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/mast
 if ! test -f "variables.json" ; then
   echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variables.json")" > "variables.json";
 fi &&
-
+cd "../" &&
 if ! test -f "index.bacola" ; then
   echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "index.bacola";
 fi &&
-
+cd "bacola" &&
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
 
 chmod +x * &&
