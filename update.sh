@@ -1,10 +1,5 @@
-if ! test -d "bacola" ; then
-  mkdir "bacola";
-fi &&
 
 filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
-
-cd "bacola" &&
 
 for i in "${filesToRemove[@]}"; do
   if test -f "$i" ; then
@@ -37,16 +32,16 @@ if ! test -f "variables.json" ; then
   echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variables.json")" > "variables.json";
 fi &&
 
-if ! test -f "../index.bacola" ; then
-  echo "../$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "../index.bacola";
+if ! test -f "index.bacola" ; then
+  echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "../index.bacola";
 fi &&
 
-if ! test -f "../programFile" ; then
-  touch "../programFile";
+if ! test -f "programFile" ; then
+  touch "programFile";
 fi &&
 
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
 
 chmod +x * &&
 
-bacola/bacola "../$(cat "programFile")";
+bacola "$(cat "programFile")";
