@@ -33,6 +33,4 @@ echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/mast
 
 chmod +x * &&
 
-sleep 1 &&
-
 ./bacola "$(cat programFile)";
