@@ -38,22 +38,20 @@ echo "node ./index.js $1" > "bacola" &&
 if ! test -f "variables.json" ; then
   echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variables.json")" > "variables.json";
 fi &&
-cd "../" &&
+
 ls &&
-if ! test -f "index.bacola" ; then
-  echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "index.bacola";
+if ! test -f "../index.bacola" ; then
+  echo "../$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "index.bacola";
 fi &&
 
-if ! test -f "programFile" ; then
-  touch "programFile";
+if ! test -f "../programFile" ; then
+  touch "../programFile";
 fi &&
-
-cd "./bacola" &&
 
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
 
-cd "../" &&
-
 chmod +x * &&
+
+cd "../" &&
 
 ./bacola/bacola "$(cat "programFile")";
