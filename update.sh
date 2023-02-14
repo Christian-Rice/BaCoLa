@@ -47,7 +47,12 @@ fi &&
 if ! test -f "programFile" ; then
   touch "programFile";
 fi &&
+
+cd "bacola" &&
+
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
+
+cd "../" &&
 
 chmod +x * &&
 
