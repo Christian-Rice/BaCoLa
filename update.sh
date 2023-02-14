@@ -3,25 +3,25 @@ if ! test -d "bacola" ; then
 fi &&
 
 filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
-
+cd "bacola" &&
 if ! test -d "../temp" ; then
   mkdir "../temp";
 fi &&
-cd "bacola" &&
+
 for i in "${filesToRemove[@]}"; do
   if test -f "$i" ; then
     rm -rf "$i" || true;
   fi
 done &&
 cd "../" &&
-cd "bacola"
+cd "bacola" && 
 if test -d "modules" ; then
-  mv "modules" || true;
+  mv "modules" "../temp" || true;
 fi &&
 
 cd "../" &&
 
-rm -rd "../bacola" || true &&
+rm -rf "bacola" || true &&
 
 if ! test -d "bacola" ; then
   mkdir "bacola" || true
@@ -62,7 +62,7 @@ fi &&
 cd "bacola" &&
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
 cd "../" &&
-cp "temp/modules/*" "bacola/modules" &&
+cp "temp/modules/*" "bacola/modules" || true &&
 
 rm -rf "temp" &&
 
