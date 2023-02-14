@@ -14,12 +14,9 @@ for i in "${filesToRemove[@]}"; do
   fi
 done &&
 cd "../" &&
-if ! test -d "../temp/modules" ; then
-  mkdir "../temp/modules";
-fi &&
 cd "bacola"
 if test -d "modules" ; then
-  mv "modules/*" "../temp/modules";
+  mv "modules" "../temp";
 fi &&
 
 cd "../" &&
