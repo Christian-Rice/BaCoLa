@@ -1,7 +1,7 @@
-rm -rf "index.js" &&
-rm -rf "language" &&
-rm -rf "modules" &&
-rm -rf "variablesdefault.json" &&
+rm -rf "bacola" &&
+
+mkdir "bacola" &&
+cd "bacola" &&
 
 clear &&
 
@@ -33,4 +33,6 @@ echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/mast
 
 chmod +x * &&
 
-./bacola "$(cat programFile)";
+cd "../" &&
+
+./bacola/bacola "$(cat programFile)";
