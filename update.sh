@@ -1,4 +1,4 @@
-if test -f "bacola/" ; then
+if test -d "bacola/" ; then
   cd "bacola/";
 else
   mkdir "bacola" &&
