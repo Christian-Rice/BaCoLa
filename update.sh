@@ -15,9 +15,12 @@ mkdir "../temp/modules" &&
 mv "modules/*" "../temp/modules" &&
 cd "../" &&
 
-rm -rd "../bacola"
+rm -rd "../bacola" &&
 
-mkdir "bacola" &&
+if ! test -d "bacola" ; then
+  mkdir "bacola"
+fi &&
+
 cd "bacola" &&
 
 clear &&
