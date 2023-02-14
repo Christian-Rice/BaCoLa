@@ -1,21 +1,23 @@
 if ! test -d "bacola" ; then
   mkdir "bacola"
 fi &&
-cd "bacola"
+
 filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
 
 if ! test -d "../temp" ; then
   mkdir "../temp";
 fi &&
-
+cd "bacola"
 for i in "${filesToRemove[@]}"; do
-  rm -rf "$i";
+  if test -f "$i" ; then
+    rm -rf "$i";
+  fi
 done &&
-
+cd "../" &&
 if ! test -d "../temp/modules" ; then
   mkdir "../temp/modules";
 fi &&
-ls &&
+cd "bacola"
 mv "modules/*" "../temp/modules" &&
 cd "../" &&
 
