@@ -1,4 +1,19 @@
-rm -rf "bacola" &&
+cd "bacola" > "/dev/null" &&
+
+filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
+
+mkdir "../temp" &&
+
+for i in "${filesToRemove[@]}"; do
+  rm -rf "$i";
+done &&
+
+mkdir "../temp/modules" &&
+
+mv "modules/*" "../temp/modules" &&
+cd "../" &&
+
+rm -rd "../bacola" > "/dev/null" &&
 
 mkdir "bacola" &&
 cd "bacola" &&
@@ -35,6 +50,10 @@ if ! test -f "programFile" ; then
 fi &&
 cd "bacola" &&
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
+
+cp "temp/modules/*" "bacola/modules" &&
+
+rm -rf "temp" &&
 
 chmod +x * &&
 
