@@ -1,7 +1,8 @@
 if test -f "bacola/" ; then
   cd "bacola/";
 else
-  mkdir "bacola"
+  mkdir "bacola" &&
+  cd "bacola";
 fi &&
 
 filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
