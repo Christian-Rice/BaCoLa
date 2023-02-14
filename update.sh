@@ -2,7 +2,7 @@ if ! test -d "bacola" ; then
   mkdir "bacola";
 fi &&
 
-cd "bacola"
+cd "./bacola"
 
 filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
 
@@ -48,7 +48,7 @@ if ! test -f "programFile" ; then
   touch "programFile";
 fi &&
 
-cd "bacola" &&
+cd "./bacola" &&
 
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variablesdefault.json")" > "variablesdefault.json" &&
 
