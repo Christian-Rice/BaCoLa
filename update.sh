@@ -44,4 +44,4 @@ echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/mast
 
 chmod +x * &&
 
-./bacola "$(cat "programFile")";
+eval "node index.js $(cat "programFile")";
