@@ -2,11 +2,9 @@ if ! test -d "bacola" ; then
   mkdir "bacola";
 fi &&
 
-cd "./bacola"
-
 filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
 
-#cd "bacola" &&
+cd "bacola" &&
 
 for i in "${filesToRemove[@]}"; do
   if test -f "$i" ; then
