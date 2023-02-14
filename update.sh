@@ -4,13 +4,17 @@ fi &&
 cd "bacola"
 filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.bclm" "modules/safeMode.bclm" "" )
 
-mkdir "../temp" &&
+if ! test -d "../temp" ; then
+  mkdir "../temp";
+fi &&
 
 for i in "${filesToRemove[@]}"; do
   rm -rf "$i";
 done &&
 
-mkdir "../temp/modules" &&
+if ! test -d "../temp/modules" ; then
+  mkdir "../temp/modules";
+fi &&
 
 mv "modules/*" "../temp/modules" &&
 cd "../" &&
