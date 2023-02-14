@@ -17,7 +17,7 @@ if ! test -d "modules" ; then
   mkdir "modules";
 fi &&
 
-echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.js")" > "modules/arrays.bclm" &&
+echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/modules/arrays.bclm")" > "modules/arrays.bclm" &&
 
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/modules/exampleModule.bclm")" > "modules/exampleModule.bclm" &&
 
