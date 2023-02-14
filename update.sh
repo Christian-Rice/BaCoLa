@@ -10,7 +10,7 @@ filesToRemove=( "modules/arrays.bclm" "modules/exampleModule.bclm" "modules/fs.b
 
 for i in "${filesToRemove[@]}"; do
   if test -f "$i" ; then
-    rm -rf "$i" || true;
+    rm -rf "./$i" || true;
   fi
 done &&
 
@@ -20,7 +20,9 @@ echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/mast
 
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/language")" > "language" &&
 
-mkdir "modules" &&
+if ! test -d "modules" ; then
+  mkdir "modules";
+fi &&
 
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.js")" > "modules/arrays.bclm" &&
 
