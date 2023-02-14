@@ -31,7 +31,7 @@ echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/mast
 echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/modules/safeMode.bclm")" > "modules/safeMode.bclm" &&
 
 #echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/bacola")" > "bacola" &&
-echo "node ./index.js $1" > "bacola" &&
+echo "node index.js $1" > "bacola" &&
 
 if ! test -f "variables.json" ; then
   echo "$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/variables.json")" > "variables.json";
@@ -39,7 +39,7 @@ fi &&
 
 ls &&
 if ! test -f "../index.bacola" ; then
-  echo "../$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "index.bacola";
+  echo "../$(curl -fsSL "https://raw.githubusercontent.com/Christian-Rice/BaCoLa/master/index.bacola")" > "../index.bacola";
 fi &&
 
 if ! test -f "../programFile" ; then
